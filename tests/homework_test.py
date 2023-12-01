@@ -20,7 +20,7 @@ def test_exercise_1():
 
 
 def test_exercise_2():
-    assert homework.exercise_2([1, 2, 3, 4, 5]) == [5, 1, 2, 3, 4, 5]
+    assert homework.exercise_2([1, 2, 3, 4, 5]) == [5, 2, 3, 4, 1]
     assert homework.exercise_2([1, 5000, -13, 4, 5]) == [1, -13, 5000, 4, 5]
 
 
@@ -31,3 +31,13 @@ def test_exercise_3():
 
     assert homework.exercise_3(["Hey", -2, -3, -4, 0, 5]) == None
     assert homework.exercise_3([]) == None
+
+
+def test_exercise_2_with_copy():
+    array = [1, 2]
+
+    result = homework.exercise_2_with_copy(array)
+
+    assert result != [1, 2]
+    assert array == [1, 2]
+    assert result == [2, 1]
